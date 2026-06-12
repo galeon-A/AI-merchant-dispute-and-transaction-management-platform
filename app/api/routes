@@ -1,0 +1,9 @@
+
+from fastapi import APIRouter
+from app.services.dispute_service import analyze_dispute
+
+router = APIRouter()
+
+@router.post("/disputes/analyze")
+def analyze(payload: dict):
+    return analyze_dispute(payload)
